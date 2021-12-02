@@ -10,7 +10,7 @@
 </head>
 <body>
   <nav>
-    <a href='/'>404 AIRLINES</a>
+    <a href='/'>HOME</a>
     <a href="/flights/new">ADD FLIGHT</a>
     <a href="/flights">ALL FLIGHTS</a>
 </nav>
@@ -44,22 +44,8 @@
                     <input type="datetime-local" min = '2021-12-01T00:00'> 
                 </label>
             <br>
-    <h1>Destinations</h1>
-    <label>AIRPORT
-        <select name = 'airport'>
-            <option value = ''>PLEASE CHOOSE AN AIRPORT</option>
-            <option value = 'AUS'>AUS</option>
-            <option value = 'DFW'>DFW</option>
-            <option value = 'DEN'>DEN</option>
-            <option value = 'LAX'>LAX</option>
-            <option value = 'SAN'>SAN</option>
-        </select>
-    </label>
-    <label>ARRIVAL
-        <input type="datetime-local" min = '2021-12-01T00:00'>
-    </label>
-        <br>
         <input type="submit" value="Add Flight">
     </form>
+    
         <%- include('../partials/footer') %>
         

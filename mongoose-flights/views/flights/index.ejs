@@ -16,26 +16,28 @@
 </nav>
 <main>
   <h1>Flight List</h1>
-  <table width ='600px'>
-    <thead>
-      <tr>
-        <th width = '100px'>Airline</th>
-        <th width = '100px'>Airport</th>
-        <th width ='120px'>Flight Number</th>
-        <th>Departs</th>
-        <th>Details</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% flights.forEach(function(f){%>
+  <form action ='/flights' method='POST'></form>
+    <table width ='600px'>
+      <thead>
         <tr>
-          <td><%= f.airline %></td>
-          <td><%= f.airport %></td>
-          <td><%= f.flightNo %></td>
-          <td><%= f.departs %></td>
-          <td><a href = '/flights/<%=f._id%>'>Details</a></td>
+          <th name ='airline' width = '100px'>Airline</th>
+          <th name ='airport'idth = '100px'>Airport</th>
+          <th name ='flightNo'idth ='120px'>Flight Number</th>
+          <th name ='departs'>Departs</th>
+          <th>Details</th>
         </tr>
-    <%});%>
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+        <% flights.forEach(function(f){%>
+          <tr>
+            <td><%= f.airline %></td>
+            <td><%= f.airport %></td>
+            <td><%= f.flightNo %></td>
+            <td><%= f.departs %></td>
+            <td><button><a href = '/flights/<%=f._id%>'>Details</a></button></td>
+          </tr>
+      <%});%>
+      </tbody>
+    </table>
+  </form>
   <%- include('../partials/footer') %>
