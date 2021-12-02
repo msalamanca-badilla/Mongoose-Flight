@@ -16,19 +16,12 @@
 </nav>
 <main>
   <h1>Flight Details</h1>
-  <ul>
-        <li>Airline: </li>
-        <li>Airport</li>
-        <li>Flight Number</li>
-        <li>Departs</li>
-        <li>Details</li>
-      </ul>
-    <ul>
-      <% flight.destinations.forEach(function(d){%>
-          <li><%= d.airline %></li>
-          <li><%= d.airport %></li>
-          <li><%= d.flightNo %></li>
-          <li><%= d.departs %></li>
-      </ul>
-    <%});%>
+  <section id ='show-page'>
+      <div>Airline: <%= flight.airport %></div>
+      <div>Airport: <%= flight.airport %></div>
+      <div>Flight Number: <%= flight.flightNo %></div>
+      <div>Departs: <%= flight.departs %></div>
+      <div>Destination Airport: <%= flight.destinations.airport %></div>
+      <div>Destination Date: <%= flight.destinations.arrival %> </div>
+  </section>
   <%- include('../partials/footer') %>

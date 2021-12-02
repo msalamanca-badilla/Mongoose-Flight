@@ -16,7 +16,7 @@ function newFlight(req, res,next) {
 }
 
 function show(req,res){
-    Flight.find(req.params.id, function(err,flight){
+    Flight.findById(req.params.id, function(err,flight){
         res.render('flights/show', {flight});
     });
 }
