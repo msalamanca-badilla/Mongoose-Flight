@@ -1,0 +1,43 @@
+<%- include('../partials/header') %>
+<title>404 AIRLINES</title>
+</head>
+<body>
+  <nav>
+    <a href='/'>404 AIRLINES</a>
+    <a href="/flights/new">ADD FLIGHT</a>
+    <a href="/flights">ALL FLIGHTS</a>
+</nav>
+<main>
+    <h1>New Flights</h1>
+    <form action ='/flights' method='POST'>
+            <label>Airline
+                    <select name ='airline'>AIRLINE
+                    <option value =''>PLEASE CHOOSE AN AIRLINE</option>
+                        <option value="American">AMERICAN</option>
+                        <option value="Southwest">SOUTHWEST</option>
+                        <option value="United">UNITED</option>
+                    </select>
+                </label>
+                    <br>
+                <label for ='airport-select'>Airport
+                    <select name = 'airport'>
+                        <option value = ''>PLEASE CHOOSE AN AIRPORT</option>
+                            <option value = 'AUS'>AUS</option>
+                            <option value = 'DFW'>DFW</option>
+                            <option value = 'DEN'>DEN</option>
+                            <option value = 'LAX'>LAX</option>
+                            <option value = 'SAN'>SAN</option>
+                        </select>
+                </label>
+                    <br>
+                <label>Flight Number
+                    <input type = 'text' name = 'flightNo'>
+                </label>
+                <br>
+                <label>Date
+                    <input type="datetime-local" min = '2021-12-01T00:00'> 
+                </label>
+                <input type="submit" value="Add Flight">
+    </form>
+        <%- include('../partials/footer') %>
+        
