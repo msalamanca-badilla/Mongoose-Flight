@@ -1,3 +1,8 @@
+* {
+  box-sizing: border-box;
+  font-family: Helvetica;
+  color: #424748;
+}
 body {
   display: grid;
   padding: 20px;
@@ -7,16 +12,42 @@ body {
 }
 
 nav {
+  display: flex;
+  padding: 0 20px 0 50px;
+  align-items: center;
+  justify-content: flex-end;
+  grid-area: nav;
   width: 100%;
   grid-column-start: 1;
   grid-column-end: 3; 
   height: 50px;
   background-color:#3289bf;
 }
+a.top{
+  margin: 0 0 0 40px;
+}
+
+main{
+  margin: 120px 0 0 0;
+}
 
 nav a{
   color: white;
   text-decoration: none;
+}
+
+label{
+  margin: 2px 0 10px 0;
+}
+
+.button{
+  border: none;
+  background-color:#3289bf;
+  color: white;
+}
+
+.button:hover{
+  color: black;
 }
 
 nav a:hover{

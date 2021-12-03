@@ -4,15 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel='stylesheet' href='/stylesheets/index/style.css' />
+  <link rel='stylesheet' href='/stylesheets/show/style.css' />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <title>FLIGHT LIST</title>
 </head>
 <body>
   <nav>
-    <a href="/">HOME</a>
-    <a href="/flights/new">ADD FLIGHT</a>
-    <a href="/flights">ALL FLIGHTS</a>
+    <a href="/" class = 'top'>HOME</a>
+    <a href="/flights/new" class = 'top'>ADD FLIGHT</a>
+    <a href="/flights" class = 'top'>ALL FLIGHTS</a>
 </nav>
 <main>
   <h1>Flight Details</h1>
@@ -25,14 +25,15 @@
         
         <form id="add-per-to-ticket" action="/flights/<%= flight._id%>" method="POST">
           <select name="ticketId">
-
+              
           </select>
-          <button type="submit">Add to Flight</button>
+          <button type="submit" class = 'button'>Add to Flight</button>
         </form>
 
 
       <br><br><h1>Destinations</h1>
       <form id ='add-destinations-form' method ='POST' action='/flights/<%= flight._id %>/destinations'>
+
           <label>AIRPORT
               <select name = 'airport'>
                   <option value = ''>PLEASE CHOOSE AN AIRPORT</option>
@@ -42,13 +43,16 @@
                   <option value = 'LAX'>LAX</option>
                   <option value = 'SAN'>SAN</option>
               </select>
-          </label>
+          </label> 
           <label>ARRIVAL
               <input type="datetime-local" min = '2021-12-01T00:00'>
           </label>
-          <input type="submit" value="Add Destination">
+
+          <br><br>
+          <input type="submit" value="Add Destination" class = 'button'>
       </form>
 
+      <br><br>
 <% if (flight.destinations.length) { %>
   <table>
     <thead>
@@ -69,6 +73,6 @@
 <% } else { %>
   <h5>No Destinations Added</h5>
 <% } %>
-      <a href = '/flights'>New Ticket</a>
+      <a href = '/flights/<%= flight._id %>/tickets/new'>New Ticket</a>
   </section>
   <%- include('../partials/footer') %>

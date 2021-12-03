@@ -1,5 +1,6 @@
 const app = require("../app");
 const Flight = require('../models/flight');
+const Ticket = require('../models/ticket');
 
 //render -> shows an ejs (does not need a slash bc its a path)
 //redirect -> shows a new url (needs a slash bc its a url)
@@ -16,8 +17,11 @@ function newFlight(req, res,next) {
 }
 
 function show(req,res){
-    Flight.findById(req.params.id, function(err,flight){
-        res.render('flights/show', {flight});
+    Flight.findById(req.params.id).populate('ticket').exec(function(err,flight){
+        Ticket.find({_id: {$nin: flight.ticket}})
+        .exec(function(err,tickets){
+            res.render('flights/show',{flight,tickets});
+        });
     });
 }
 
