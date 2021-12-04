@@ -10,6 +10,6 @@ const ticketSchema = new Schema({
         type: Number,
         min: 0,
     },
-})
+});
 
 module.exports = mongoose.model('Ticket', ticketSchema);

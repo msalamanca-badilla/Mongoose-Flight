@@ -1,5 +1,4 @@
-<h1>hello</h1>
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -11,25 +10,21 @@
 </head>
 <body>
   <nav>
-    <a href="/">HOME</a>
-    <a href="/flights/new">ADD FLIGHT</a>
-    <a href="/flights">ALL FLIGHTS</a>
+    <a href="/" class = 'top'>HOME</a>
+    <a href="/flights/new" class = 'top'>ADD FLIGHT</a>
+    <a href="/flights" class = 'top'>ALL FLIGHTS</a>
 </nav>
 <main>
 
-<p>Please first ensure that the Performer is not in the dropdown
-    <select>
-      <% tickets.forEach(function(t) { %>
-        <option><%= t.ticket %></option>
-      <% }) %>
-    </select>
-  </p>
-  <form id="add-ticket-form" action="/flights/<%= flight._id %>/tickets" method="POST">
+  
+  <form id="add-ticket-form" action="/flights" method="POST">
     <label>Seat:</label>
         <input name="seat" required pattern="[A-F][1-9]\d?">
+          <br><br>
     <label>Price:</label>
     <input type="number" name="price">
+      <br><br>
     <input type="submit" value="Add Ticket">
   </form>
   
-  <%- include('../partials/footer') %> -->
+  <%- include('../partials/footer') %>

@@ -17,5 +17,5 @@ function create(req,res){
 }
 
 function newTicket(req, res) {
-      res.render('yo')
+      res.render('tickets/new')
   }
