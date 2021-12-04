@@ -17,14 +17,12 @@ function newFlight(req, res,next) {
 }
 
 function show(req,res){
-    Flight.findById(req.params.id).populate('ticket').exec(function(err,flight){
-        Ticket.find({_id: {$nin: flight.ticket}})
-        .exec(function(err,tickets){
+    Flight.findById(req.params.id, function(err,flight){
+        Ticket.find({flight: flight._id}, (function(err,tickets){
             res.render('flights/show',{flight,tickets});
-        });
-    });
-}
-
+        })
+    )}
+)}
 function index(req,res){
     Flight.find({},function(err,flights){//error when cannot find flight
     res.render('flights/index', {flights})

@@ -4,6 +4,7 @@ const Flight = require('../models/flight');
 module.exports = {
     create,
     new: newTicket,
+    
 }
 
 function create(req,res){
@@ -16,7 +17,5 @@ function create(req,res){
 }
 
 function newTicket(req, res) {
-    Ticket.find({}, function (err, tickets) {
-      res.render('tickets/new', {tickets});
-    })
+      res.render('yo')
   }

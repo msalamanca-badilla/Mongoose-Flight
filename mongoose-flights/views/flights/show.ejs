@@ -15,7 +15,7 @@
     <a href="/flights" class = 'top'>ALL FLIGHTS</a>
 </nav>
 <main>
-  <h1>Flight Details</h1>
+  <h1>FLIGHT DETAILS</h1>
   <section id ='show-page'>
       <div>Airline: <%= flight.airline %></div>
       <div>Airport: <%= flight.airport %></div>
@@ -31,12 +31,12 @@
         </form>
 
 
-      <br><br><h1>Destinations</h1>
+      <br><br><h1>DESTINATIONS</h1>
       <form id ='add-destinations-form' method ='POST' action='/flights/<%= flight._id %>/destinations'>
 
-          <label>AIRPORT
+          <label>Airport
               <select name = 'airport'>
-                  <option value = ''>PLEASE CHOOSE AN AIRPORT</option>
+                  <option value = ''>Please choose an airport</option>
                   <option value = 'AUS'>AUS</option>
                   <option value = 'DFW'>DFW</option>
                   <option value = 'DEN'>DEN</option>
@@ -44,7 +44,7 @@
                   <option value = 'SAN'>SAN</option>
               </select>
           </label> 
-          <label>ARRIVAL
+          <label>Arrival
               <input type="datetime-local" min = '2021-12-01T00:00'>
           </label>
 
