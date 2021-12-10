@@ -33,7 +33,7 @@ function create(req,res){
     const flight = new Flight (req.body);
     flight.save(function(err){//error happens when flight doesnt save properly (put a number in a string property)
         if (err) return res.redirect('/flights/new');
-        res.redirect(`/flights/${flight._id}`);
+        res.redirect('/flights');
     });
 }
 

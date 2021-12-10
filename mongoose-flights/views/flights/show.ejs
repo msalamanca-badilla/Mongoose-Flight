@@ -23,11 +23,11 @@
       <div>Departs: <%= flight.departs %></div>
       <div>Tickets: </div>
         
-        <form id="add-per-to-ticket" action="/flights/<%= flight._id%>/tickets" method="POST">
+        <form id="add-per-to-ticket" action="/tickets/<%= flight._id%>" method="POST">
           <select name="ticketId"> 
             <option value = ''>Please select ticket</option>
               <% tickets.forEach(function(t) { %>
-                <option><%= t.tickets %></option>
+                <option><%= t.seat %></option>
               <% }) %>
           </select>
           <button type="submit" class = 'button'>Add to Flight</button>
@@ -76,6 +76,6 @@
 <% } else { %>
   <h5>No Destinations Added</h5>
 <% } %>
-      <a href = '/flights/<%= flight._id %>/tickets/new'>New Ticket</a>
+      <a href = '/tickets/<%= flight._id %>/tickets/new'>New Ticket</a>
   </section>
   <%- include('../partials/footer') %>
