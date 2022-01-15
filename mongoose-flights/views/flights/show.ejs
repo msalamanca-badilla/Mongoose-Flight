@@ -48,7 +48,7 @@
               </select>
           </label> 
           <label>Arrival
-              <input type="datetime-local" min = '2021-12-01T00:00'>
+              <input type="datetime-local" min = '2021-12-01T00:00' name ='arrival'>
           </label>
 
           <br><br>
@@ -76,6 +76,6 @@
 <% } else { %>
   <h5>No Destinations Added</h5>
 <% } %>
-      <a href = '/tickets/<%= flight._id %>/new'>New Ticket</a>
   </section>
+  <a href = '/tickets/<%= flight._id %>/new' class = 'button'>New Ticket</a>
   <%- include('../partials/footer') %>

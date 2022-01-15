@@ -9,7 +9,7 @@ const destinationSchema = new Schema({
         arrival: {
         type: Date,
         default(){
-            return new Date().getFullYear();
+            return new Date().toString();
             }
         }
     });
